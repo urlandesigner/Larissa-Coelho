@@ -48,7 +48,7 @@ export const config = {
       "Atendimento humanizado e especializado em odontopediatria, ortodontia e estética. Cada detalhe pensado para o seu conforto e o do seu filho.",
     cta: "Agendar avaliação",
     secondaryCta: "Conhecer tratamentos",
-    photo: "/images/4.jpeg",
+    photo: "/images/4.jpg",
     badge: {
       stat: "+4",
       label: "especialidades\nem um só lugar",
