@@ -1,4 +1,3 @@
-import { ImageIcon } from "lucide-react";
 import { config } from "@/config";
 import { Reveal } from "@/components/ui/reveal";
 import { SectionHeading } from "@/components/ui/section-heading";
@@ -44,19 +43,12 @@ export function Ambiente() {
                   i === 0 ? "aspect-[4/3] lg:aspect-[3/4]" : "aspect-[4/3]"
                 )}
               >
-                {img.src ? (
-                  <img
-                    src={img.src}
-                    alt={img.alt}
-                    loading="lazy"
-                    className="absolute inset-0 size-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                ) : (
-                  <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 text-mauve/50">
-                    <ImageIcon className="size-10" strokeWidth={1.25} />
-                    <span className="text-sm font-medium">{img.alt}</span>
-                  </div>
-                )}
+                <img
+                  src={img.src}
+                  alt={img.alt}
+                  loading="lazy"
+                  className="absolute inset-0 size-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
               </div>
             </Reveal>
           ))}
