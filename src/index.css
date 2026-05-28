@@ -1,0 +1,199 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+/* ============================================
+   Design Tokens — Dra. Larissa Coelho
+   Briefing: design-system.md / creative-direction.md
+   ============================================ */
+
+@theme {
+  /* ---- Brand palette ---- */
+  --color-blush: #f9d4e2; /* rosa claro — fundos suaves, decorativo */
+  --color-blush-soft: #fdeef3; /* rosa quase branco — tints */
+  --color-rose: #c98a9b; /* rosa profundo — derivado, acentos/CTA */
+  --color-rose-deep: #a8687a; /* rosa escuro — hover de CTA */
+  --color-sage: #8caea3; /* verde sage — secundária */
+  --color-mint: #aecab1; /* verde menta — accent */
+  --color-pine: #6b8e83; /* verde escuro — texto sobre claro */
+  --color-mauve: #845858; /* marrom/rosa — contornos, detalhes */
+  --color-cream: #fbf8f6; /* off-white quente — background */
+  --color-cream-deep: #f3ece7; /* creme mais fechado — seções alternadas */
+  --color-ink: #3a3330; /* texto principal */
+  --color-ink-soft: #6f6661; /* texto secundário */
+
+  /* ---- Fontes ---- */
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+
+  /* ---- Containers ---- */
+  --container-site: 1280px;
+  --container-content: 720px;
+
+  /* ---- Font scale (desktop) ---- */
+  --text-h1: 72px;
+  --text-h1--line-height: 1.05;
+  --text-h2: 52px;
+  --text-h2--line-height: 1.1;
+  --text-h3: 36px;
+  --text-h3--line-height: 1.2;
+  --text-body: 18px;
+  --text-body--line-height: 1.7;
+  --text-small: 14px;
+  --text-small--line-height: 1.6;
+
+  /* ---- Radius ---- */
+  --radius-button: 9999px; /* pílula */
+  --radius-card: 24px;
+  --radius-input: 12px;
+  --radius-visual: 2.5rem; /* cantos grandes — placeholders foto, CTA block */
+
+  /* ---- Shadows (suaves, premium) ---- */
+  --shadow-card: 0 12px 40px -12px rgba(132, 88, 88, 0.12);
+  --shadow-card-hover: 0 20px 60px -16px rgba(132, 88, 88, 0.18);
+  --shadow-soft: 0 8px 24px -10px rgba(58, 51, 48, 0.1);
+}
+
+/* ============================================
+   shadcn/ui variables (mapeadas à marca)
+   ============================================ */
+:root {
+  /* Spacing scale (design-system.md) — fora do @theme para não sobrescrever max-w-* do Tailwind v4 */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 40px;
+  --spacing-2xl: 64px;
+  --spacing-3xl: 96px;
+  --spacing-section: 120px;
+  --spacing-section-mobile: 72px;
+
+  --radius: 0.75rem;
+  --background: var(--color-cream);
+  --foreground: var(--color-ink);
+  --card: #ffffff;
+  --card-foreground: var(--color-ink);
+  --popover: #ffffff;
+  --popover-foreground: var(--color-ink);
+  --primary: var(--color-rose);
+  --primary-foreground: #ffffff;
+  --secondary: var(--color-sage);
+  --secondary-foreground: #ffffff;
+  --muted: var(--color-cream-deep);
+  --muted-foreground: var(--color-ink-soft);
+  --accent: var(--color-blush-soft);
+  --accent-foreground: var(--color-mauve);
+  --destructive: #c0563f;
+  --border: rgba(132, 88, 88, 0.14);
+  --input: rgba(132, 88, 88, 0.18);
+  --ring: var(--color-rose);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+/* ============================================
+   Base
+   ============================================ */
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    font-size: var(--text-body);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    color: var(--color-ink);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+
+  ::selection {
+    background-color: var(--color-blush);
+    color: var(--color-mauve);
+  }
+}
+
+/* ============================================
+   Utilitários do projeto
+   ============================================ */
+@layer components {
+  .container-site {
+    width: 100%;
+    max-width: var(--container-site);
+    margin-inline: auto;
+    padding-inline: 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .container-site {
+      padding-inline: 2.5rem;
+    }
+  }
+
+  .section-pad {
+    padding-block: var(--spacing-section-mobile);
+  }
+
+  @media (min-width: 768px) {
+    .section-pad {
+      padding-block: var(--spacing-section);
+    }
+  }
+
+  /* Eyebrow label — padrão reutilizado em seções e SectionHeading */
+  .text-eyebrow {
+    @apply text-xs font-medium uppercase text-rose;
+    letter-spacing: 0.2em;
+  }
+}
+
+/* Respeitar reduced motion (creative-direction.md) */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
