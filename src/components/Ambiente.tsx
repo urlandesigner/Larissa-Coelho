@@ -1,10 +1,16 @@
+import { useState } from "react";
+import Lightbox from "yet-another-react-lightbox";
+import "yet-another-react-lightbox/styles.css";
+
 import { config } from "@/config";
 import { Reveal } from "@/components/ui/reveal";
 import { SectionHeading } from "@/components/ui/section-heading";
-import { cn } from "@/lib/utils";
 
 export function Ambiente() {
   const { ambiente } = config;
+  const [lightboxIndex, setLightboxIndex] = useState(-1);
+
+  const slides = ambiente.images.map((img) => ({ src: img.src, alt: img.alt }));
 
   return (
     <section id="ambiente" className="section-pad">
@@ -15,45 +21,53 @@ export function Ambiente() {
           subtitle={ambiente.subtitle}
         />
 
-        {/*
-          Layout desktop (lg, 3 colunas):
-          [ 1 (tall) ] [ 2 ] [ 3 ]
-          [ 1 (tall) ] [   4    ]
+        <div className="mt-14 grid gap-8 lg:grid-cols-[3fr_2fr] lg:items-start">
+          {/* Fotos: grade 2×2 */}
+          <div className="grid grid-cols-2 gap-4">
+            {ambiente.images.map((img, i) => (
+              <Reveal key={i} delay={0.08 * i}>
+                <button
+                  type="button"
+                  onClick={() => setLightboxIndex(i)}
+                  className="group relative aspect-[4/3] w-full overflow-hidden rounded-card shadow-card focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+                  aria-label={`Ampliar foto: ${img.alt}`}
+                >
+                  <img
+                    src={img.src}
+                    alt={img.alt}
+                    loading="lazy"
+                    className="absolute inset-0 size-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-black/0 transition-colors duration-300 group-hover:bg-black/10" />
+                </button>
+              </Reveal>
+            ))}
+          </div>
 
-          Layout tablet (sm, 2 colunas):
-          [ 1 ] [ 1 ]
-          [ 2 ] [ 3 ]
-          [   4   ]
-
-          Layout mobile: coluna única
-        */}
-        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {ambiente.images.map((img, i) => (
-            <Reveal
-              key={i}
-              delay={0.08 * i}
-              className={cn(
-                i === 0 && "sm:col-span-2 lg:col-span-1 lg:row-span-2",
-                i === 3 && "sm:col-span-2 lg:col-span-2"
-              )}
-            >
-              <div
-                className={cn(
-                  "group relative overflow-hidden rounded-card bg-gradient-to-br from-blush-soft via-cream to-mint/40 shadow-card",
-                  i === 0 ? "aspect-[4/3] lg:aspect-[3/4]" : "aspect-[4/3]"
-                )}
-              >
-                <img
-                  src={img.src}
-                  alt={img.alt}
-                  loading="lazy"
-                  className="absolute inset-0 size-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-              </div>
-            </Reveal>
-          ))}
+          {/* Vídeo: sticky no desktop */}
+          <Reveal delay={0.3} className="lg:sticky lg:top-24">
+            <div className="relative aspect-[9/16] overflow-hidden rounded-card shadow-card bg-neutral-900">
+              <video
+                src="/tour-clinica.mp4"
+                poster="/images/clinica1.jpg"
+                controls
+                muted
+                playsInline
+                preload="none"
+                className="absolute inset-0 size-full object-cover"
+                aria-label="Tour pela clínica Dra. Larissa Coelho"
+              />
+            </div>
+          </Reveal>
         </div>
       </div>
+
+      <Lightbox
+        open={lightboxIndex >= 0}
+        index={lightboxIndex}
+        close={() => setLightboxIndex(-1)}
+        slides={slides}
+      />
     </section>
   );
 }

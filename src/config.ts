@@ -23,13 +23,13 @@ export const config = {
     )}`,
     instagram: "https://www.instagram.com/dra.larissa_coelho_muniz?igsh=b2MwOGN3aTc5c28z",
     instagramHandle: "@dra.larissa_coelho_muniz",
-    address: "Avenida São Paulo, 1404, Praia da Costa, Vila Velha — ES",
+    address: "Avenida São Paulo, 195, Praia da Costa, Vila Velha — ES",
     addressShort: "Praia da Costa, Vila Velha — ES",
     city: "Vila Velha — ES",
     mapsLink:
-      "https://www.google.com/maps/search/?api=1&query=Avenida+São+Paulo+1404+Praia+da+Costa+Vila+Velha+ES",
+      "https://www.google.com/maps/search/?api=1&query=Avenida+São+Paulo+195+Praia+da+Costa+Vila+Velha+ES",
     mapsEmbed:
-      "https://www.google.com/maps?q=Avenida+São+Paulo+1404+Praia+da+Costa+Vila+Velha+ES&output=embed",
+      "https://www.google.com/maps?q=Avenida+São+Paulo+195+Praia+da+Costa+Vila+Velha+ES&output=embed",
   },
 
   nav: [
@@ -197,7 +197,7 @@ export const config = {
       {
         question: "Onde fica a clínica?",
         answer:
-          "Estamos na Avenida São Paulo, 1404, Praia da Costa, Vila Velha — ES. Você encontra o mapa no rodapé do site.",
+          "Estamos na Avenida São Paulo, 195, Praia da Costa, Vila Velha — ES. Você encontra o mapa no rodapé do site.",
       },
       {
         question: "Quais formas de tratamento estão disponíveis?",

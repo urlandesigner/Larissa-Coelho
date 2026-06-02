@@ -20,7 +20,7 @@ Vila Velha — ES (CRO 5421-ES)
 
 ### Endereço
 
-Avenida São Paulo, 1404, Praia da Costa, Vila Velha ES
+Avenida São Paulo, 195, Praia da Costa, Vila Velha ES
 
 ### WhatsApp
 
