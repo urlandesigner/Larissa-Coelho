@@ -82,7 +82,10 @@ export function Hero() {
           <div className="relative aspect-[4/5] overflow-hidden rounded-visual bg-gradient-to-br from-blush via-blush-soft to-mint/60 shadow-card">
             <img
               src={config.hero.photo}
-              alt={config.clinic.professional}
+              alt="Dra. Larissa Coelho, dentista em Vila Velha"
+              width="800"
+              height="1000"
+              fetchPriority="high"
               className="absolute inset-0 size-full object-cover object-top"
             />
           </div>

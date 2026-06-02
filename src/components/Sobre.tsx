@@ -14,7 +14,9 @@ export function Sobre() {
             <div className="relative aspect-[4/5] overflow-hidden rounded-visual shadow-card">
               <img
                 src={config.about.photo}
-                alt={config.clinic.professional}
+                alt="Dra. Larissa Coelho, especialista em Odontopediatria e Ortodontia"
+                width="800"
+                height="1000"
                 className="absolute inset-0 size-full object-cover object-top"
                 loading="lazy"
               />

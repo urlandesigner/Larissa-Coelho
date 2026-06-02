@@ -35,6 +35,8 @@ export function Ambiente() {
                   <img
                     src={img.src}
                     alt={img.alt}
+                    width="640"
+                    height="480"
                     loading="lazy"
                     className="absolute inset-0 size-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />

@@ -43,7 +43,7 @@ export const config = {
 
   hero: {
     eyebrow: "Odontologia Especializada · Vila Velha — ES",
-    title: "Um sorriso cuidado com delicadeza e excelência",
+    title: "Dentista em Vila Velha para cuidar do seu sorriso com delicadeza e excelência",
     subtitle:
       "Atendimento humanizado e especializado em odontopediatria, ortodontia e estética. Cada detalhe pensado para o seu conforto e o do seu filho.",
     cta: "Agendar avaliação",
@@ -142,10 +142,22 @@ export const config = {
     subtitle:
       "Cada ambiente foi pensado para transmitir calma, segurança e bem-estar desde o momento em que você chega.",
     images: [
-      { src: "/images/clinica1.jpg", alt: "Clínica Dra. Larissa Coelho" },
-      { src: "/images/clinica2.jpg", alt: "Consultório" },
-      { src: "/images/clinica3.jpg", alt: "Sala de Odontopediatria" },
-      { src: "/images/clinica4.jpg", alt: "Ambiente da clínica" },
+      {
+        src: "/images/clinica1.jpg",
+        alt: "Recepção da clínica odontológica Dra. Larissa Coelho em Vila Velha",
+      },
+      {
+        src: "/images/clinica2.jpg",
+        alt: "Consultório odontológico da Dra. Larissa Coelho",
+      },
+      {
+        src: "/images/clinica3.jpg",
+        alt: "Sala de odontopediatria da clínica Dra. Larissa Coelho",
+      },
+      {
+        src: "/images/clinica4.jpg",
+        alt: "Ambiente acolhedor da clínica odontológica em Praia da Costa",
+      },
     ],
   },
 
