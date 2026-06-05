@@ -43,7 +43,7 @@ export const config = {
 
   hero: {
     eyebrow: "Odontologia Especializada · Vila Velha — ES",
-    title: "Dentista em Vila Velha para cuidar do seu sorriso com delicadeza e excelência",
+    title: "Seu sorriso, cuidado com delicadeza",
     subtitle:
       "Atendimento humanizado e especializado em odontopediatria, ortodontia e estética. Cada detalhe pensado para o seu conforto e o do seu filho.",
     cta: "Agendar avaliação",

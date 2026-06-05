@@ -7,7 +7,7 @@ export function Hero() {
   return (
     <section
       id="top"
-      className="relative overflow-hidden pt-32 pb-20 md:pt-40 md:pb-28"
+      className="relative overflow-hidden min-h-screen flex flex-col justify-center pt-24 pb-20 md:pt-28 md:pb-24"
     >
       {/* Fundos decorativos suaves */}
       <div
